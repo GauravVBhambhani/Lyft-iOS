@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1045508A2AE8CF8A002321F6 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104550892AE8CF8A002321F6 /* MapViewController.swift */; };
 		104D6A342AE8B26700FC5A44 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104D6A332AE8B26700FC5A44 /* LaunchScreen.storyboard */; };
 		104D6A362AE8B29400FC5A44 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 104D6A352AE8B29400FC5A44 /* Main.storyboard */; };
 		D03FBEEC279FBC21008525E8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03FBEEB279FBC21008525E8 /* AppDelegate.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		104550892AE8CF8A002321F6 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		104D6A332AE8B26700FC5A44 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		104D6A352AE8B29400FC5A44 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		D03FBEE8279FBC21008525E8 /* RideSharer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RideSharer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -59,6 +61,7 @@
 				D03FBEEB279FBC21008525E8 /* AppDelegate.swift */,
 				D03FBEED279FBC21008525E8 /* SceneDelegate.swift */,
 				D03FBF01279FBEE2008525E8 /* RideHistoryViewController.swift */,
+				104550892AE8CF8A002321F6 /* MapViewController.swift */,
 				D03FBEF4279FBC23008525E8 /* Assets.xcassets */,
 				D03FBEF9279FBC23008525E8 /* Info.plist */,
 				104D6A332AE8B26700FC5A44 /* LaunchScreen.storyboard */,
@@ -141,6 +144,7 @@
 				D03FBEEC279FBC21008525E8 /* AppDelegate.swift in Sources */,
 				D03FBEEE279FBC21008525E8 /* SceneDelegate.swift in Sources */,
 				D03FBF02279FBEE2008525E8 /* RideHistoryViewController.swift in Sources */,
+				1045508A2AE8CF8A002321F6 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

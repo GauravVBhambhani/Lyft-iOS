@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="87c-oI-C8Z">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Ride History View Controller-->
+        <!--History-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController id="Y6W-OH-hqX" customClass="RideHistoryViewController" customModule="RideSharer" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tka-0z-fSJ">
-                                <rect key="frame" x="0.0" y="183" width="393" height="635"/>
+                                <rect key="frame" x="0.0" y="183" width="393" height="586"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lyft_logo" translatesAutoresizingMaskIntoConstraints="NO" id="ObJ-LG-ezj">
@@ -48,17 +49,72 @@
                             <constraint firstItem="ObJ-LG-ezj" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="yV6-vn-nVo"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" title="History" image="clock" catalog="system" selectedImage="clock.fill" id="0wo-bW-vFs"/>
                     <connections>
                         <outlet property="historyTbl" destination="tka-0z-fSJ" id="5TX-RO-ogX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-727" y="729"/>
+        </scene>
+        <!--Location-->
+        <scene sceneID="Hzs-TI-Q9g">
+            <objects>
+                <viewController id="oMr-Ac-JMQ" customClass="MapViewController" customModule="RideSharer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yc4-dn-Fv3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4cf-Ui-Vyr">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5Vg-Wo-8Ln"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="4cf-Ui-Vyr" firstAttribute="leading" secondItem="5Vg-Wo-8Ln" secondAttribute="leading" id="B2a-FQ-1AC"/>
+                            <constraint firstItem="4cf-Ui-Vyr" firstAttribute="top" secondItem="5Vg-Wo-8Ln" secondAttribute="top" id="D79-GN-fOA"/>
+                            <constraint firstItem="5Vg-Wo-8Ln" firstAttribute="bottom" secondItem="4cf-Ui-Vyr" secondAttribute="bottom" id="QqK-Uh-wkr"/>
+                            <constraint firstItem="5Vg-Wo-8Ln" firstAttribute="trailing" secondItem="4cf-Ui-Vyr" secondAttribute="trailing" id="deX-SF-aRg"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Location" image="mappin.circle" catalog="system" selectedImage="mappin.circle.fill" id="uOd-dZ-QSt"/>
+                    <connections>
+                        <outlet property="mapView" destination="4cf-Ui-Vyr" id="mO8-yX-mIr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6jb-oU-5W5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856" y="729"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="THm-2P-a2M">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="87c-oI-C8Z" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="T0z-kQ-iJ9">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Y6W-OH-hqX" kind="relationship" relationship="viewControllers" id="nrC-de-Gdm"/>
+                        <segue destination="oMr-Ac-JMQ" kind="relationship" relationship="viewControllers" id="KMs-tQ-82G"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3tR-Bw-DtG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
             <point key="canvasLocation" x="57.251908396946561" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>
         <image name="Lyft_logo" width="2560" height="1814"/>
+        <image name="clock" catalog="system" width="128" height="123"/>
+        <image name="clock.fill" catalog="system" width="128" height="123"/>
+        <image name="mappin.circle" catalog="system" width="128" height="123"/>
+        <image name="mappin.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
