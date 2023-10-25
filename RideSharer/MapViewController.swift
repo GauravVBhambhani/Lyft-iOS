@@ -17,8 +17,14 @@ class MapViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        checkAuthStatus()
+        checkLocationServices()
         
+    }
+    
+    func checkLocationServices() {
+        if CLLocationManager.locationServicesEnabled() {
+            checkAuthStatus()
+        }
     }
 
     func checkAuthStatus() {
